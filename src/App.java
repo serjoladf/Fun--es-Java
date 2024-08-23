@@ -1,9 +1,26 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Recebe dados de Fora
+
         
+        double peso;
+        peso = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso da pessoa"));
+
+        // podemos utilizar tbm para reveber dados o 
+        String nome;
+        nome = JOptionPane.showInputDialog("Informe a idade da pessoa");
+
+        int idade;
+        idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade da pessoa"));
+        
+        System.out.println(nome);
+        System.out.println(idade);
+        System.out.println("Hello, World!");
+
+
         String y = ("Serjola");
         String x = (" Hello, World!, e ai Serjola tudo bem.");
         System.out.println(x.length()); // Conta a quantidade de caractere de uma String
@@ -18,6 +35,7 @@ public class App {
         System.err.println(x.equals("Serjola")); // Compara a palavra com a String - AQUI FALSO
         System.err.println(y.equals("Serjola")); // Compara a palavra com a String - AQUI Verdadeiro
         
+        // Conicionais
         int numb1 = 2, numb2 = 3;
         // if, else if, else
         if(numb1 > numb2){
@@ -95,12 +113,5 @@ public class App {
             number = sc.nextInt();
             i++;
         }
-        // Entrada de Dados
-
-
-
-
-
-
     }
 }
