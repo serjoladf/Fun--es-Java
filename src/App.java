@@ -3,19 +3,21 @@ import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in); // Recebe dados de Fora
-
         
+            // Metódo JoptionPane.ShowInputDialog
+
         double peso;
         peso = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso da pessoa"));
 
         // podemos utilizar tbm para reveber dados o 
         String nome;
-        nome = JOptionPane.showInputDialog("Informe a idade da pessoa");
+        nome = JOptionPane.showInputDialog("Informe o nome da pessoa");
 
         int idade;
         idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade da pessoa"));
         
+        JOptionPane.showInternalMessageDialog(null,nome+" sua idade é "+ idade+" anoos"); // forma de imprimir na caxinha o SHOW é diferente
+
         System.out.println(nome);
         System.out.println(idade);
         System.out.println("Hello, World!");
@@ -34,7 +36,14 @@ public class App {
         System.out.println(x.substring(16)); // Rescreva a String a partir do da quantidade de numero dado
         System.err.println(x.equals("Serjola")); // Compara a palavra com a String - AQUI FALSO
         System.err.println(y.equals("Serjola")); // Compara a palavra com a String - AQUI Verdadeiro
-        
+         
+        // Metódo Scanner
+
+        Scanner sc = new Scanner(System.in); // Recebe dados de Fora
+        String sobrenome;
+        System.out.println("Digite o sobrenome da pessoa");
+        sobrenome = sc.nextLine(); // forma de entrada com Scanner
+
         // Conicionais
         int numb1 = 2, numb2 = 3;
         // if, else if, else
@@ -113,5 +122,6 @@ public class App {
             number = sc.nextInt();
             i++;
         }
+        sc.close(); // Fechamenbto do Scanner 
     }
 }
