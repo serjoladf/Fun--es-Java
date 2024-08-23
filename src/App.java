@@ -95,6 +95,12 @@ public class App {
             number = sc.nextInt();
             i++;
         }
+        // Entrada de Dados
+
+
+
+
+
 
     }
 }
