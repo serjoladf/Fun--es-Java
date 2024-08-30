@@ -5,6 +5,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         
             // Metódo JoptionPane.ShowInputDialog
+            // Atalho para System.out.println = SOUT IntelliJ e VsCode
+            // Atalho para System.out.printf = SOUf IntelliJ e VsCode
+            // Atalho para System.out.println = Sysout Eclipse e VsCode
+            // O Prompt de Comando se tornar ambiente Java ao executar JSshel
 
         double peso;
         peso = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso da pessoa"));
@@ -146,5 +150,7 @@ public class App {
         System.out.println(div2);
         div2 = (float) n1 / n2; // Ja neste caso apos colocar o (float) antes da operação ele entende o numero deciamal
         System.out.println(div2);
+
+      
     }
 }
