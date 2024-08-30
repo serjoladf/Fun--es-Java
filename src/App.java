@@ -16,7 +16,13 @@ public class App {
         int idade;
         idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade da pessoa"));
         
-        JOptionPane.showInternalMessageDialog(null,nome+" sua idade é "+ idade+" anoos"); // forma de imprimir na caxinha o SHOW é diferente
+        
+        // System.out.println(idade);
+        // System.out.println(nome+" sua idade é "+ idade);
+        //JOptionPane.showInternalMessageDialog(null,nome+" sua idade é "+ idade+" anoos"); // forma de imprimir na caxinha o SHOW é diferente
+        // JOptionPane.showMessageDialog(null,nome+" sua idade é "+ idade+" anos"); // forma de imprimir na caxinha o SHOW é diferente
+        // (como JOptionPane.INFORMATION_MESSAGE, JOptionPane.WARNING_MESSAGE, JOptionPane.ERROR_MESSAGE)
+        JOptionPane.showMessageDialog(null,nome+" sua idade é "+ idade+" anos","vc esta velho porra",JOptionPane.INFORMATION_MESSAGE); // forma de imprimir na caxinha o SHOW é diferente
 
         System.out.println(nome);
         System.out.println(idade);
@@ -123,5 +129,17 @@ public class App {
             i++;
         }
         sc.close(); // Fechamenbto do Scanner 
+        
+        // Dica 1000
+        // Quando você usa sc.nextDouble() para ler um valor numérico e depois tenta ler uma linha com sc.nextLine(),
+        //  você pode enfrentar problemas. O nextDouble() não consome a quebra de linha após o número, então o nextLine() 
+        //  imediatamente após pode ler uma linha em branco.
+        // Solução: Use >> sc.nextLine() << após sc.nextDouble() para consumir a quebra de linha restante, 
+        // ou leia todas as entradas usando sc.nextLine() e faça a conversão manualmente
+
+        int n1 = 5;
+        int n2 = 2;
+        int divisao = n1 / n2;
+        float div2 = n1 / n2;
     }
 }
