@@ -139,7 +139,12 @@ public class App {
 
         int n1 = 5;
         int n2 = 2;
-        int divisao = n1 / n2;
-        float div2 = n1 / n2;
+        int divisao = n1 / n2; // O JAva não transforma em um numero deciamal
+        float div2 = n1 / n2; // neste caso o Java não entende o numero deciamal
+
+        System.out.println(divisao);
+        System.out.println(div2);
+        div2 = (float) n1 / n2; // Ja neste caso apos colocar o (float) antes da operação ele entende o numero deciamal
+        System.out.println(div2);
     }
 }
