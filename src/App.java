@@ -1,7 +1,11 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class App {
+public class App{ 
     public static void main(String[] args) throws Exception {
         
             // Metódo JoptionPane.ShowInputDialog
@@ -10,7 +14,40 @@ public class App {
             // Atalho para System.out.println = Sysout Eclipse e VsCode
             // O Prompt de Comando se tornar ambiente Java ao executar JSshel
 
+        // Trabalhando com Data e Hora no Java
+        LocalDate hoje = LocalDate.now(); // Uma criação de objeto para data
+        LocalDateTime hojeHora = LocalDateTime.now(); // Uma criação de objeto para data e Hora
+        System.out.println(hoje); // Mostra a Data de Hoje
+        System.out.println(hojeHora); // Mostra a Data de Hoje e hora atual
+
+        Locale brasil = new Locale("pt","BR");
+        System.out.println(hoje.getChronology().dateNow()); // Mostra a Data de Hoje
+        System.out.println(hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil)); // Mostra o dia por extenso
+        System.out.println(hoje.getMonth().getDisplayName(TextStyle.FULL, brasil));// Mostra o Mês por extenso
+        System.out.println(hoje.getYear()-42); // Dá pra fazer operação matemática 
+        System.out.println(hoje.getYear()); // retorna o Ano vigente
+
+        // Exemplo de se utilizando HORA
+        String saudacao; 
+        String nome5 = "Sérgio";
+
+        if(hojeHora.getHour() >= 8 && hojeHora.getHour() < 12) {
+            saudacao = "Bom dia";
+        }
+        else if(hojeHora.getHour() >= 12 && hojeHora.getHour() < 18){
+                saudacao = "Boa Tarde";
+        }
+        else{
+            saudacao = "Boa Noite";
+        }
+        System.out.println(saudacao); // Impressão e impressão da Saudação e utilisando o PRINTF abaixo
+        System.out.printf("Olá, %s hoje é %s ,%s.",nome5,hoje.getDayOfWeek().getDisplayName(TextStyle.FULL, brasil),saudacao);
+
+
+        // -----------------------------------------------------------------------------------------
+        String nome2 = "Sergio";
         double peso;
+
         peso = Double.parseDouble(JOptionPane.showInputDialog("Informe o peso da pessoa"));
 
         // podemos utilizar tbm para reveber dados o 
@@ -20,6 +57,8 @@ public class App {
         int idade;
         idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade da pessoa"));
         
+        System.out.println(nome2.equals(nome)+" Comparando");
+        System.out.println(nome2.equalsIgnoreCase(nome)+" Ignorando"); // Serve para comparar e não levar em conta Caixa alta ou baixa
         
         // System.out.println(idade);
         // System.out.println(nome+" sua idade é "+ idade);
@@ -64,14 +103,19 @@ public class App {
         }else {
          System.err.println("legal, numb1 é menor que numb2 ");
         }
+
+        
+        // Operadores Ternários
+        System.out.println((numb1 > numb2) ? "lá éle misera" : "não peste");
+
+        String qualquer =  ((numb1 > numb2) ? "lá éle misera" : "não peste");
+        System.out.println(qualquer);
         
         // switch comportamento
-
         System.out.println("Digite um numero na switch 1");
         int opcao = sc.nextInt();
 
-
-        switch (opcao) {
+            switch (opcao) {
             case 1 :
                 System.err.println("caso 1 primeira opção");
                 break;
@@ -151,6 +195,6 @@ public class App {
         div2 = (float) n1 / n2; // Ja neste caso apos colocar o (float) antes da operação ele entende o numero deciamal
         System.out.println(div2);
 
-      
+          
     }
 }
